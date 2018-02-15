@@ -1,65 +1,56 @@
 import React,{Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components'
 
+const Container = styled.View`
+  background-color: yellow;
+  flex: 1;
+  align-items: stretch;
+  justify-content: center;
+`
+const Content = styled.Text`
+  color: yellowgreen;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+const Addresstxt = Content.extend`
+  background-color: gray;
+  color: royalblue
+`
+const Liketxt = Content.extend`
+  background-color: paleturquoise;
+  color: chocolate
+`
+
+const FeedContainer = Container.extend`
+  background-color: paleturquoise;
+`
+
+const Address =() => (
+      <FeedContainer> 
+          <Addresstxt>
+            {'address'}
+          </Addresstxt>
+      </FeedContainer>
+)
+
+const Likes =() => (
+  <FeedContainer> 
+      <Liketxt>
+        {'Likes'}
+      </Liketxt>
+  </FeedContainer>
+)
+  
 export default class Feed extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-
-        <View style={[styles.forAllChild , styles.forFeed]}> 
-          <Text>
-            {'First Text'}
-          </Text>
-        </View>
-        <View style={styles.forMe}> 
-          <Text>
-            {'First Text'}
-          </Text>
-        </View>
-        <View style={styles.forMyShaadi}> 
-          <Text>
-            {'First Text'}
-          </Text>
-        </View>
-        <View style={styles.forChat}> 
-          <Text>
-            {'First Text'}
-          </Text>
-        </View>
-
-        {/* <Text >{'Feed Me'}</Text> */}
-        
-      </View>
+      <FeedContainer>
+        <Address/>
+        <Likes/>
+      </FeedContainer>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'cyan',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
-  },
-   forAllChild : {
-    justifyContent: 'center',
-    alignItems: 'center',
-   },
-   forFeed :{
-     flex: 1 , 
-     backgroundColor: '#ff0000', 
-   } ,
-    forMe :{
-      flex :1,
-      backgroundColor : 'blue'
-    },
-    forMyShaadi :{
-      flex :1,
-      backgroundColor : 'green'
-    },
-    forChat :{
-      flex :1,
-      backgroundColor : 'green'
-    },
-});

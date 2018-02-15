@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'cyan',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
    forAllChild : {
     justifyContent: 'center',

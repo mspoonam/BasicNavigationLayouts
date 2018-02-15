@@ -6,22 +6,22 @@ export default class Feed extends React.Component {
     return (
       <View style={styles.container}>
 
-        <View> 
+        <View style={[styles.forAllChild , styles.forFeed]}> 
           <Text>
             {'First Text'}
           </Text>
         </View>
-        <View> 
+        <View style={styles.forMe}> 
           <Text>
             {'First Text'}
           </Text>
         </View>
-        <View> 
+        <View style={styles.forMyShaadi}> 
           <Text>
             {'First Text'}
           </Text>
         </View>
-        <View> 
+        <View style={styles.forChat}> 
           <Text>
             {'First Text'}
           </Text>
@@ -38,15 +38,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'cyan',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-   address :{
-     flex: 1 , backgroundColor: '#ff0000', 
+   forAllChild : {
+    justifyContent: 'center',
+    alignItems: 'center',
+   },
+   forFeed :{
+     flex: 1 , 
+     backgroundColor: '#ff0000', 
    } ,
-    likes :{
+    forMe :{
       flex :1,
       backgroundColor : 'blue'
+    },
+    forMyShaadi :{
+      flex :1,
+      backgroundColor : 'green'
+    },
+    forChat :{
+      flex :1,
+      backgroundColor : 'green'
     },
 });

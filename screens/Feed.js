@@ -16,11 +16,11 @@ const Content = styled.Text`
 `
 const Addresstxt = Content.extend`
   background-color: gray;
-  color: royalblue
+  color: royalblue;
 `
 const Liketxt = Content.extend`
   background-color: paleturquoise;
-  color: chocolate
+  color: chocolate;
 `
 
 const FeedContainer = Container.extend`
